@@ -192,7 +192,7 @@ function setup(){
           return JSON.stringify(data, null, 2)
         }
       }
-      
+
     // HIGHLIGHT
     // References to the previous selections
       const highlightModel = { id: - 1};
