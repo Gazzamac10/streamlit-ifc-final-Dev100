@@ -1,0 +1,43 @@
+body{
+    background: linear-gradient(147deg, rgba(231, 231, 231, 0.6) 4%, rgba(112, 111, 108, 0.5) 96%);    
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.header{
+    text-align: center;
+}
+
+.header h1{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 60px;
+    text-shadow: 3px 2px rgb(248, 119, 55);
+    color: ##EA9999;
+}
+
+.canvas {
+    position:absolute;
+    left: 50px;%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    margin-top: 3%;
+}
+
+#file-input {
+    z-index: 1;
+    position: relative;
+    left:52%;
+    transform: translateX(-52%);
+    font-size: 22px;
+}
+#three-canvas{
+    position: relative;
+    height: 200% !important;
+    width: 200% !important;
+    z-index: 10;
+
+}
+  
