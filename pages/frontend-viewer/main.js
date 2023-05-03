@@ -108,7 +108,7 @@ function setup(){
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   
     //Creates grids and axes in the window.scene
-    const grid = new GridHelper(50, 30);
+    const grid = new GridHelper(50, 300);
     window.scene.add(grid);
     const axes = new AxesHelper();
     axes.material.depthTest = false;

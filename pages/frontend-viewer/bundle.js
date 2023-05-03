@@ -74475,9 +74475,11 @@ function setup(){
     const renderer = new WebGLRenderer({ canvas: threeCanvas, alpha: true });
     renderer.setSize(size.width, size.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  
+    renderer.setClearColor(new Color(0.1, 0.1, 0.2)); // Sets the background color to a dark gra
+
+
     //Creates grids and axes in the window.scene
-    const grid = new GridHelper(50, 30);
+    const grid = new GridHelper(500, 30);
     window.scene.add(grid);
     const axes = new AxesHelper();
     axes.material.depthTest = false;
