@@ -28,7 +28,6 @@ def ifc_js_viewer(  #
     )  #
     return component_value  #
 
-
 #                                                                           #
 #############################################################################
 
@@ -50,8 +49,9 @@ def execute():
         st.header("Step 1: Load a file from the Home Page")
 
 
-
-
-
 session = st.session_state
 execute()
+
+#ifc_file = ifcopenshell.file.from_string('IFC/FLB-ACM-XX-ZZ-M3-AR-000001_S0_P01.ifc')
+
+
