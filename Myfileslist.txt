@@ -1,0 +1,15 @@
+.idea
+.vscode
+GazViewer.py
+Homepage.py
+IFC
+instructions.md
+main.py
+Myfileslist.txt
+node_modules
+package-lock.json
+package.json
+pages
+README.md
+requirements.txt
+tools

@@ -49,6 +49,7 @@ var require_crypto = __commonJS({
   }
 });
 
+
 // dist/web-ifc.js
 var require_web_ifc = __commonJS({
   "dist/web-ifc.js"(exports, module) {

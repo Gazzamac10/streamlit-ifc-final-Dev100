@@ -1,16 +1,26 @@
-# This is a sample Python script.
+import streamlit as st
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import Homepage
+from tools import ifchelper
+import json
+import ifcopenshell
+##################### STREAMLIT IFC-JS COMPONENT MAGIC ######################
+from pathlib import Path
+from typing import Optional
+import streamlit.components.v1 as components
 
+# Tell streamlit that there is a component called ifc_js_viewer,
+# and that the code to display that component is in the "frontend" folder
+frontend_dir = 'pages/frontend-viewer'
+_component_func = components.declare_component(
+    "ifc_js_viewer", path=str(frontend_dir)
+)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# Create the python function that will be called
+def ifc_js_viewer(url: Optional[str] = None):
+    component_value = _component_func(url=url)
+    return component_value
 
+filename = "FLB-ACM-XX-ZZ-M3-AR-000001_S0_P01.ifc"
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+ifc_js_viewer()

@@ -28,7 +28,6 @@ def ifc_js_viewer(  #
     )  #
     return component_value  #
 
-
 #                                                                           #
 #############################################################################
 
@@ -130,7 +129,7 @@ def get_object_data(fromId=None):
                 }
                 debug_props["inverse_references"].append(propy)
 
-            print(debug_props["attributes"])
+            #print(debug_props["attributes"])
 
 
 def edit_object_data(object_id, attribute):
