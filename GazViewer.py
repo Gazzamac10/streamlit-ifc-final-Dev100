@@ -23,28 +23,22 @@ def ifc_js_viewer(url: Optional[str] = None):
     component_value = _component_func(url=url)
     return component_value
 
+def draw_3d_viewer(file):
+    ifc_js_viewer(file)
 
-def callback_upload():
-    session["array_buffer"] = session["uploaded_file"].getvalue()
-    session["ifc_file"] = ifcopenshell.file.from_string(session["array_buffer"].decode("utf-8"))
+filepath = 'IFC/hello_wall.ifc'
+file = ifcopenshell.file.from_string(filepath)
+
+with open(filepath, 'rb') as f:
+    ifc_bytes = f.read()
+
+test = bytearray(ifc_bytes)
+
+draw_3d_viewer(test)
+
+products = file.by_type('IfcProduct')
+
+print(filepath)
 
 
-st.sidebar.header('Model Loader')
-st.sidebar.file_uploader("Choose a file", type=['ifc'], key="uploaded_file", on_change=callback_upload)
-
-session = st.session_state
-
-
-def get_current_ifc_file():
-    return session.array_buffer
-
-def draw_3d_viewer():
-    ifc_js_viewer(get_current_ifc_file())
-
-def execute():
-    draw_3d_viewer()
-
-execute()
-
-st.write(get_current_ifc_file())
 
