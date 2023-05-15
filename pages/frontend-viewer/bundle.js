@@ -74624,3 +74624,4 @@ Streamlit.events.addEventListener(Streamlit.RENDER_EVENT, loadURL);
 Streamlit.setComponentReady();
 // Render with the correct height, if this is a fixed-height component
 Streamlit.setFrameHeight(window.innerWidth/2);
+

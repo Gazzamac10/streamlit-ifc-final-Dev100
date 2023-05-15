@@ -9,18 +9,39 @@ from pathlib import Path
 from typing import Optional
 import streamlit.components.v1 as components
 
-# Tell streamlit that there is a component called ifc_js_viewer,
-# and that the code to display that component is in the "frontend" folder
-frontend_dir = 'pages/frontend-viewer'
-_component_func = components.declare_component(
-    "ifc_js_viewer", path=str(frontend_dir)
-)
+def hastag(productlist):
+    testelements = []
+    for item in productlist:
+        try:
+            if item.Tag:
+                testelements.append(item)
+        except:
+            testelements = None
+    return testelements
 
-# Create the python function that will be called
-def ifc_js_viewer(url: Optional[str] = None):
-    component_value = _component_func(url=url)
-    return component_value
 
-filename = "FLB-ACM-XX-ZZ-M3-AR-000001_S0_P01.ifc"
+filepath = 'IFC/hello_wall.ifc'
+ifc_file = ifcopenshell.open(filepath)
 
-ifc_js_viewer()
+products = ifc_file.by_type('IfcProduct')
+pnames = []
+obj_info = []
+for product in products:
+    pnames.append(product.is_a())
+
+uniquepPnames = (sorted([item for item in set(pnames)]))
+
+listoflistofproducts = [ifc_file.by_type(item) for item in uniquepPnames]
+
+elementswithtags = [hastag(item) for item in listoflistofproducts]
+elementsout = [x for x in elementswithtags if x]
+
+"""
+ind = 0
+testbeams = elementsout[ind]
+testonebeam = testbeams[0]
+testonebeam2 = testbeams[-1]
+"""
+print (listoflistofproducts[4][0].get_info()['id'])
+
+print (ifc_file.by_type("IfcElement"))

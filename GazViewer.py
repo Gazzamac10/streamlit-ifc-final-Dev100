@@ -36,9 +36,8 @@ test = bytearray(ifc_bytes)
 
 draw_3d_viewer(test)
 
-products = file.by_type('IfcProduct')
+#products = file.by_type('IfcProduct')
 
-print(filepath)
-
+#print(filepath)
 
 
