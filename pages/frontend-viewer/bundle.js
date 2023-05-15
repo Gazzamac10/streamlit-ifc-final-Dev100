@@ -74566,8 +74566,8 @@ function setup(){
       
     // HIGHLIGHT
     // References to the previous selections
-      const highlightModel = { id: - 1};
-      const selectModel = { id: - 1};
+      const highlightModel = { id: 0};
+      const selectModel = { id: 0};
     function highlight(event, material, model) {
     const intersection = getIntersection(event);
     if (intersection) {

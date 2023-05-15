@@ -26,7 +26,7 @@ def ifc_js_viewer(url: Optional[str] = None):
 def draw_3d_viewer(file):
     ifc_js_viewer(file)
 
-filepath = 'IFC/hello_wall.ifc'
+filepath = 'IFC/FLB-ACM-XX-ZZ-M3-AR-000001_S0_P01.ifc'
 file = ifcopenshell.file.from_string(filepath)
 
 with open(filepath, 'rb') as f:
