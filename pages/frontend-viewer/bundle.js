@@ -74597,6 +74597,9 @@ function setup(){
       };
 }
 
+
+url = 'C:\Users\mccarthyg\PycharmProjects\streamlit-ifc-final-Dev100\IFC\10-132201-0000100595-ACM-STR-MDL-000001_Gary.McCarthy@aecom.ifc'
+
 async function sigmaLoader (url, ifcLoader){
   const ifcModel = await ifcLoader.ifcManager.parse(url.buffer);
   ifcModels.push(ifcModel.mesh);
@@ -74616,6 +74619,13 @@ async function sigmaLoader (url, ifcLoader){
     window.rendered = true;
   }
 }
+
+//const myVariable = getIfcType();
+//console.log(myVariable);
+
+
+
+
 
 Streamlit.loadViewer(setup);
 // Render the component whenever python send a "render event"
